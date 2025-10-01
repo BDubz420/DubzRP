@@ -1,0 +1,123 @@
+.playerhud
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+}
+
+/* Logo top-center */
+> .logo
+{
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 128px;
+    height: auto;
+}
+
+/* Bottom-left container for health, armor, and vitals text */
+> .bottom-left
+{
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+    flex-direction: column-reverse;
+    gap: 4px;
+}
+
+/* Vitals text */
+> .bottom-left > .vitals
+{
+    flex-direction: column;
+    gap: 4px; /* spacing between Salary, Job, Wallet */
+}
+
+/* Wallet text - green */
+> .bottom-left > .vitals > .wallet
+{
+    font-weight: bold;
+    color: #00FF00;
+    text-shadow: 2px 2px 4px black;
+}
+
+/* Job text - blue */
+> .bottom-left > .vitals > .job
+{
+    font-weight: bold;
+    color: #4488FF;
+    text-shadow: 2px 2px 4px black;
+}
+
+/* Salary text - green */
+> .bottom-left > .vitals > .salary
+{
+    font-weight: bold;
+    color: #00FF00;
+    text-shadow: 2px 2px 4px black;
+}
+
+/* Health and Armor Bars */
+> .bottom-left > .healthbar
+{
+    width: 300px;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    background-color: #111;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > .fill
+    {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: width 0.2s ease;
+    }
+
+    > p
+    {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+    }
+}
+
+/* Health bar red */
+> .bottom-left > .healthbar.health
+{
+    height: 30px;
+}
+
+> .bottom-left > .healthbar.health > .fill
+{
+    background-color: #FF4444;
+}
+
+/* Armor bar blue (half height) */
+> .bottom-left > .healthbar.armor
+{
+    height: 15px;
+}
+
+> .bottom-left > .healthbar.armor > .fill
+{
+    background-color: #4488FF;
+}
+
+/* Armor bar text smaller */
+> .bottom-left > .healthbar.armor > p
+{
+    font-size: 15px;
+}
